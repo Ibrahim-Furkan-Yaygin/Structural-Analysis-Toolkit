@@ -191,7 +191,7 @@ displacements, element axial forces, and support reactions.
 
 | MATLAB | ANSYS |
 |---|---|
-| ![MATLAB Deformed Shape](Results/03_Deformed_Shape.png) | [ANSYS Deformed Shape](Figures/02_Ansys_Deformation.png) |
+| ![MATLAB Deformed Shape](Results/06_Displacements_Contour.png) | [ANSYS Deformed Shape](Figures/02_Ansys_Deformation.png) |
 
 ### Element Axial Force Comparison
 
