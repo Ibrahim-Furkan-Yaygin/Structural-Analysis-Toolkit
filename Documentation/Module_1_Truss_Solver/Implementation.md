@@ -25,7 +25,9 @@ The imported geometry is converted into a cell array containing
 the start and end coordinates of each truss member. Each cell 
 contains a member's coordinates in the following matrix format:
 
-$$\begin{bmatrix} x_1 & x_2 \\ y_1 & y_2 \\ z_1 & z_2 \end{bmatrix} $$
+$$\begin{bmatrix} x_1 & x_2 \\
+y_1 & y_2 \\ 
+z_1 & z_2 \end{bmatrix} $$
 
 It should be noted that even though the solver is 2D, the $z$ coordinates 
 are still saved since the DXF format supports it.
