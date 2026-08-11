@@ -138,8 +138,9 @@ validation discussion are available in:
 The current version has the following limitations:
 
 - Only 2D truss structures are supported.
-- The geometry must lie in the global XY plane.
-- DXF geometry is currently expected to use millimeter units.
+- The geometry must lie in the global XY plane in the CAD drawing.
+- CAD drawing is expected to use millimeter units.
+- Only DXF exports are supported.
   - DXF exports with `LWPOLYLINE` entities are currently not supported.
 - Truss members are assumed to carry axial loads only.
 - Loads are applied at nodes.
@@ -149,7 +150,6 @@ The current version has the following limitations:
 - Material nonlinearities are not considered.
 - Geometric nonlinearities are not considered.
   - Every truss member has same constant cross sectional area.
-
 
 ---
 
