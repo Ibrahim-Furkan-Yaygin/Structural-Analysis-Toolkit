@@ -31,14 +31,20 @@ BC_y_support_user = str2num(input('Enter the node numbers for ROLLER SUPPORTS co
 
 if BC_fixed_support_user == 0
     BC_fixed_support_user= [];
+elseif any(BC_fixed_support_user > no_of_unique_nodes)
+    error('Maximum node number exceeded.')
 end
 
 if BC_x_support_user == 0
     BC_x_support_user= [];
+elseif any(BC_x_support_user > no_of_unique_nodes)
+    error('Maximum node number exceeded.')
 end
 
 if BC_y_support_user == 0
     BC_y_support_user= [];
+elseif any(BC_y_support_user > no_of_unique_nodes)
+    error('Maximum node number exceeded.')
 end
 
 BC_nodes_user = [BC_fixed_support_user, BC_x_support_user, BC_y_support_user];
