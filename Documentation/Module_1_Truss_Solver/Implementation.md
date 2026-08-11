@@ -77,9 +77,9 @@ processed truss geometry.
 
 For each truss member, the implementation calculates its:
 
-Length
-Direction cosines
-Element stiffness matrix
+- Length
+- Direction cosines
+- Element stiffness matrix
 
 The element stiffness matrices are then assembled into the global
 stiffness matrix according to the corresponding node connectivity
