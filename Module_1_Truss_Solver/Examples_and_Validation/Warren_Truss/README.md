@@ -91,7 +91,7 @@ the ```unit_convert``` parameter is currently hardcoded.
 ## 4. Boundary Conditions and Applied Loads
 
 The boundary conditions and external loads are defined through
-the MATLAB Command Window while using **Figure 3** for node numbering refence.
+the MATLAB Command Window while using **Figure 3** for node numbering reference.
 
 The resulting model configuration is shown below.
 
