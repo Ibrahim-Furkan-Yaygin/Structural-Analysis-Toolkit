@@ -14,6 +14,7 @@ Supported DXF entities:
 
 The following requirements apply to the imported geometry:
 
+- Truss structure to be drawn as wireframe consisting of straight line segments connecting the truss nodes.
 - The truss must be defined in the global XY plane.
 - The current implementation assumes that the CAD geometry is defined in millimeters.
 - `LWPOLYLINE` entities are not currently supported.
