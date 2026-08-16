@@ -235,17 +235,5 @@ displacements, element axial forces, and support reactions.
 
 ---
 
-## 7. Conclusion
-
-This example demonstrates the complete workflow of the 2D Truss Solver, 
-from CAD geometry import to automated finite element analysis and visual 
-post-processing. By successfully parsing a DXF file, identifying node-element 
-connectivity, and applying boundary conditions directly in MATLAB, the solver 
-provides a streamlined alternative for fast structural evaluations without 
-manual mesh creation.
-
-Furthermore, the full agreement with ANSYS Mechanical Student Version 
-validates the mathematical formulation and stiffness matrix assembly of the code.
-
-Overall, this benchmark confirms both the operational efficiency of the 
-CAD-integrated workflow and the numerical precision of the MATLAB solver.
+The full agreement with ANSYS Mechanical Student Version validates the 
+mathematical formulation and stiffness matrix assembly of the code.
