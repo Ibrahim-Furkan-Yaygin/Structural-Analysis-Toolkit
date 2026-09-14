@@ -1,225 +1,120 @@
 # Structural Analysis Toolkit
 
 A MATLAB-based finite element analysis toolkit for structural analysis.
-The project is developed as a modular collection of finite element
-solvers, with the first module implementing a 2D truss solver.
 
-The project demonstrates the implementation of finite element analysis
-methods, CAD-based geometry import, structural post-processing, and
-validation against established FEA software.
+The project is developed as a collection of independent modules, with each module focusing on a different type of structural analysis. The main goal of the toolkit is to implement finite element methods from scratch while keeping the analysis workflow clear, modular, and easy to verify.
 
----
-
-## Features
+## Modules
 
 ### Module 1 — 2D Truss Solver
 
-The first module provides a complete finite element workflow for
-two-dimensional truss structures, including:
+A finite element solver for two-dimensional truss structures.
 
-- DXF-based CAD geometry import
-- Automatic node extraction and numbering
-- Element connectivity generation
-- Node merging and element deduplication
-- Global stiffness matrix assembly
-- Sparse matrix storage
-- Boundary condition application
-- Nodal load definition
-- Singular-system detection
-- Nodal displacement solution
-- Element strain and stress calculation
-- Element axial force calculation
-- Support reaction calculation
-- Deformed-shape visualization
-- Color-mapped result visualization
-- Numerical result tables
+The module includes CAD-based geometry import, automatic node and element processing, global stiffness matrix assembly, boundary condition and load definition, structural solution, and post-processing.
+
+[View Module 1 →](Module_1_Truss_Solver/)
+
+### Module 2 — 2D Beam/Frame Solver
+
+A finite element solver for two-dimensional beam and frame structures.
+
+This module also supports CAD-based geometry import, beam geometry processing 
+(including cross-section properties), meshing, finite element stiffness matrix assembly, 
+boundary condition and load definition, structural solution, and post-processing.
+
+[View Module 2 →](Module_2_Beam_Frame_Solver/)
 
 ---
 
-## Formulation
+## Project Structure
 
-The solver uses standard 2D truss (bar) elements with two translational
-degrees of freedom per node.
+The toolkit is organized into separate modules so that each solver can be developed, tested, and documented independently.
 
-Element stiffness matrices are assembled into a global sparse stiffness
-matrix using the direct stiffness method. After applying the specified
-boundary conditions, the resulting reduced system is solved for the
-unknown nodal displacements.
+```text
+Structural-Analysis-Toolkit/
+│
+├── Module_1_Truss_Solver/
+│   ├── README.md
+│   ├── src/
+│   └── Examples_and_Validation/
+│
+├── Module_2_Beam_Frame_Solver/
+│   ├── README.md
+│   ├── src/
+│   └── Examples_and_Validation/
+│
+├── Documentation/
+│   ├── Module_1_Truss_Solver/
+│   │   └── Implementation.md
+│   │
+│   └── Module_2_Beam_Frame_Solver/
+│       └── Implementation.md
+│
+└── LICENSE
+```
 
-The formulation assumes linear elastic material behavior and small
-deformations.
+## General Analysis Workflow
 
----
+Although each module has its own formulation and implementation, the toolkit follows a general finite element analysis workflow:
 
-## Workflow
+```text
+CAD Geometry
+   ↓
+Geometry / Model Processing
+   ↓
+Meshing
+   ↓
+Element Formulation
+   ↓
+Global Stiffness Matrix
+   ↓
+Boundary Conditions + Loads
+   ↓
+FE Solution
+   ↓
+Post-Processing
+   ↓
+Results
+```
 
-The overall analysis workflow is:
+The modules also include visualization and verification steps to help check the model before interpreting the numerical results.
 
-    CAD Geometry
-         ↓
-    DXF Import
-         ↓
-    Node Processing
-         ↓
-    Geometry Verification
-         ↓
-    Global Stiffness Matrix
-         ↓
-    Boundary Conditions + Loads
-         ↓
-    BC / Load Verification
-         ↓
-    FE Solution
-         ↓
-    Post-Processing
-         ↓
-    Results
+## Development Approach
 
-The solver provides visual verification at two important stages:
+The toolkit is developed with a focus on:
 
-1. **Geometry verification** — element and node numbering are displayed
-   so that the imported geometry and connectivity can be checked.
+- Implementing finite element formulations directly in MATLAB
+- Keeping each solver as an independent module
+- Using CAD geometry as an input
+- Providing visual checks during the analysis process
+- Comparing selected results with established FEA software for validation
+- Expanding the toolkit gradually through independent modules
 
-2. **Boundary condition and load verification** — supports and applied
-   force vectors are displayed on the structure so that the user can
-   confirm the analysis setup before interpreting the results.
+## Planned Development
 
----
+Future development may include:
 
-## CAD / DXF Geometry Import
-
-The solver imports truss geometry from DXF files.
-
-Currently supported DXF entities are:
-
-- `LINE`
-- `POLYLINE`
-
-`LWPOLYLINE` entities are currently not supported.
-
-The current implementation requires:
-
-- Truss structure to be drawn as wireframe consisting of straight line segments connecting the truss nodes
-- 2D truss geometry defined in the global XY plane
-- Geometry defined in millimeters
-
-The DXF import functionality has been tested using geometry exported
-from Autodesk Inventor and SolidWorks. DXF files generated by other CAD systems are expected to work when
-their truss geometry is exported using compatible `LINE` or `POLYLINE`
-entities and follows the requirements above.
-
-The DXF file is specified directly in the main script.
-
----
-
-## Example & Validation
-
-A Warren truss example is included to demonstrate the complete analysis
-workflow and validate the MATLAB implementation.
-
-The example includes:
-
-- Problem definition
-- CAD geometry
-- DXF import
-- Boundary conditions and applied loads
-- MATLAB solver results
-- Validation against ANSYS
-
-The complete example, numerical comparison, result figures, and
-validation discussion are available in:
-
-`Examples/Warren_Truss/README.md`
-
----
-
-## Limitations
-
-The current version has the following limitations:
-
-- Only 2D truss structures are supported.
-- The geometry must lie in the global XY plane in the CAD drawing.
-- CAD drawing is expected to use millimeter units.
-- Only DXF exports are supported.
-  - DXF exports with `LWPOLYLINE` entities are currently not supported.
-- Truss members are assumed to carry axial loads only.
-- Loads are applied at nodes.
-  - Distributed loads are currently not supported. 
-- Linear elastic material behavior is assumed.
-- Small-deformation analysis is assumed.
-- Material nonlinearities are not considered.
-- Geometric nonlinearities are not considered.
-  - Every truss member has same constant cross sectional area.
-
----
-
-## Future Development
-
-The toolkit is intended to be expanded into a broader structural
-analysis tool.
-
-Potential future modules include:
-
-- Beam and frame analysis
 - 2D plane stress analysis
 - Composite laminate analysis
 - 3D truss analysis
 - Additional CAD geometry import capabilities
-- Additional element formulations
+- Additional finite element formulations
 - Expanded validation cases
-
----
 
 ## Requirements
 
 - MATLAB
-- A CAD software capable of exporting the truss geometry as a DXF file
-  using supported entities (`LINE` or `POLYLINE`)
+- A compatible CAD software that is able to export drawings in .DXF format
 
-No external MATLAB toolbox is required for the core 2D truss solver.
-
-See [CAD / DXF Geometry Import](#cad-dxf-geometry-import) for the
-geometry and DXF requirements.
-
----
-
-## How to Run
-
-1. Clone or download the repository.
-2. Open MATLAB and set the repository directory as the current folder.
-3. Add the `src` directory to the MATLAB path.
-4. Open the main script in the `src` directory.
-5. Specify the DXF geometry file and model properties in the main script.
-   An example Warren truss geometry file is included for an initial run.
-6. Run the main script.
-7. Verify the imported geometry using the element and node numbering
-   plots shown in Figures 1 and 2.
-8. Follow the Command Window prompts to define boundary conditions and
-   applied loads.
-9. Verify the boundary conditions and applied loads using the
-   verification plot shown in Figure 3.
-10. Review the generated result plots and numerical tables displayed in
-    the Command Window.
-
-For a complete worked example, see:
-
-`Module_1_Truss_Solver/Examples_and_Validation/Warren_Truss/`
-
----
+Specific requirements and instructions for each solver are provided in their respective module directories.
 
 ## Documentation
 
-Additional implementation details for Module 1 are available in:
+Implementation details are provided separately for each module.
 
-`Documentation/Module_1_Truss_Solver/Implementation.md`
-
-The documentation describes the internal workflow of the solver,
-including CAD import, node processing, stiffness matrix assembly,
-boundary condition application, solution, and post-processing.
-
----
+- [Module 1 — Truss Solver Documentation](Documentation/Module_1_Truss_Solver/Implementation.md)
+- [Module 2 — Beam/Frame Solver Documentation](Documentation/Module_2_Beam_Frame_Solver/Implementation.md)
 
 ## License
 
-This project is licensed under the MIT License. See the
-[LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
