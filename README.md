@@ -33,22 +33,23 @@ The toolkit is organized into separate modules so that each solver can be develo
 ```text
 Structural-Analysis-Toolkit/
 │
+├── README.md
+│
 ├── Module_1_Truss_Solver/
 │   ├── README.md
 │   ├── src/
+│   ├── Documentation/
+│   │   └── Implementation.md
 │   └── Examples_and_Validation/
+│       └── Warren_Truss/
 │
 ├── Module_2_Beam_Frame_Solver/
 │   ├── README.md
 │   ├── src/
-│   └── Examples_and_Validation/
-│
-├── Documentation/
-│   ├── Module_1_Truss_Solver/
+│   ├── Documentation/
 │   │   └── Implementation.md
-│   │
-│   └── Module_2_Beam_Frame_Solver/
-│       └── Implementation.md
+│   └── Examples_and_Validation/
+│       └── ...
 │
 └── LICENSE
 ```
@@ -112,8 +113,8 @@ Specific requirements and instructions for each solver are provided in their res
 
 Implementation details are provided separately for each module.
 
-- [Module 1 — Truss Solver Documentation](Documentation/Module_1_Truss_Solver/Implementation.md)
-- [Module 2 — Beam/Frame Solver Documentation](Documentation/Module_2_Beam_Frame_Solver/Implementation.md)
+- [Module 1 — Truss Solver](Module_1_Truss_Solver/Documentation/Implementation.md)
+- [Module 2 — Beam/Frame Solver](Module_2_Beam_Frame_Solver/Documentation/Implementation.md)
 
 ## License
 
