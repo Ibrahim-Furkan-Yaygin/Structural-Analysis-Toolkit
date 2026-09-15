@@ -1,4 +1,4 @@
-# Warren Truss — Example & Validation
+# Warren Truss - Example & Validation
 
 ## 1. Overview
 
