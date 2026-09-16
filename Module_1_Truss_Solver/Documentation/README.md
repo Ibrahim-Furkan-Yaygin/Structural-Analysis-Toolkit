@@ -1,4 +1,4 @@
-# Module 1 — 2D Truss Solver: Implementation
+# Module 1 - 2D Truss Solver: Implementation
 
 ## 1. Overview
 
