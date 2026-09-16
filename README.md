@@ -113,8 +113,8 @@ Specific requirements and instructions for each solver are provided in their res
 
 Implementation details are provided separately for each module.
 
-- [Module 1 — Truss Solver](Module_1_Truss_Solver/Documentation/Implementation.md)
-- [Module 2 — Beam/Frame Solver](Module_2_Beam_Frame_Solver/Documentation/Implementation.md)
+- [Module 1 - Truss Solver](Module_1_Truss_Solver/Documentation/README.md)
+- [Module 2 - Beam/Frame Solver](Module_2_Beam_Frame_Solver/Documentation/README.md)
 
 ## License
 
