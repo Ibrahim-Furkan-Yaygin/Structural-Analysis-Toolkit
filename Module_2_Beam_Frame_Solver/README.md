@@ -121,7 +121,7 @@ No additional software or MATLAB toolbox is required to run the solver.
 ## How to Run
 
 1. Open MATLAB.
-2. Open the Module 2 folder.
+2. Open the Module 2 `src` folder.
 3. Open the main MATLAB script.
 4. Set the file names or paths for the beam/frame centerline and cross-section DXF files in the main script manually.
 5. Set the Modulus of Elasticity of your problem in main script manually.
