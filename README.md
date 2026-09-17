@@ -88,7 +88,7 @@ The toolkit is developed with a focus on:
 - Keeping each solver as an independent module
 - Using CAD geometry as an input
 - Providing visual checks during the analysis process
-- Comparing selected results with established FEA software for validation
+- Comparing selected results with established FEA software or analytical solutions for validation
 - Expanding the toolkit gradually through independent modules
 
 ## Planned Development
