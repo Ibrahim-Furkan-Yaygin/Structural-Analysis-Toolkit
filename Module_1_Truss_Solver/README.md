@@ -112,7 +112,7 @@ The example includes:
 
 The complete example, numerical comparison, result figures, and validation discussion are available in:
 
-`Examples_and_Validation/Warren_Truss/`
+[Examples_and_Validation/Warren_Truss/](Examples_and_Validation/Warren_Truss/README.md)
 
 ## Limitations
 
@@ -154,13 +154,13 @@ No external MATLAB toolbox is required for the core 2D truss solver.
 
 For a complete worked example, see:
 
-`Examples_and_Validation/Warren_Truss/`
+[Examples_and_Validation/Warren_Truss/](Examples_and_Validation/Warren_Truss/README.md)
 
 ## Documentation
 
 Additional implementation details for Module 1 are available in:
 
-[Documentation/Module_1_Truss_Solver/Implementation.md](../Documentation/Module_1_Truss_Solver/Implementation.md)
+[Documentation/Module_1_Truss_Solver](Documentation/README.md)
 
 The documentation describes the internal workflow of the solver, including CAD import, node processing, stiffness matrix assembly, boundary condition application, solution, and post-processing.
 
