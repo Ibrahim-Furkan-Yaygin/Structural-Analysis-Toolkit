@@ -188,7 +188,7 @@ The pinned support at $D$ is removed to obtain a statically determinate primary 
 
 ![Primary structure and Virtual system](Figures/05_Primary_Structure_and_Virtual_System.png)
 
-*Figure 9: Primary structure and Virtual system with unit reactions at $D$*
+*Figure 9: Primary structure and Virtual system with unit reactions at D*
 
 In the primary structure the point $D$ will have both vertical and horizontal displacements, $\Delta_{D,V}$ and $\Delta_{D,H}$. Ignoring the displacements produced by axial forces, these displacements can be calculated as:
 
@@ -531,7 +531,7 @@ For this displacement calculation virtual work method is used. As shown in Figur
 
 ![Virtual structure wth unit at C](Figures/09_Virtual_Structure_Unit_C.png)
 
-*Figure 13: Virtual structure with a unit horizontal load at $C$*
+*Figure 13: Virtual structure with a unit horizontal load at C*
 
 
 Neglecting axial contributions, the horizontal displacement at $C$ can be found from:
@@ -806,7 +806,7 @@ The analytical and FEM axial force distributions are compared in the figure belo
 
 ![Axial Distribution Comparison](Results/07_Axial_Distribution_Comparison.png)
 
-[Figure 18: FEM axial force diagram vs. Analytical*
+*Figure 18: FEM axial force diagram vs. Analytical*
 
 The close agreement between the analytical and FEM results provides validation to the beam/frame 
 solver.
